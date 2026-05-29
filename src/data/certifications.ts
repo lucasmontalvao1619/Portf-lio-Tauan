@@ -5,6 +5,8 @@ export interface Certification {
   icon: CertificationIcon;
   title: string;
   description: string;
+  /** Registro ou credencial em destaque (ex.: CREF). */
+  credential?: string;
 }
 
 export const CERTIFICATIONS: Certification[] = [
@@ -12,7 +14,8 @@ export const CERTIFICATIONS: Certification[] = [
     id: "cref",
     icon: "award",
     title: "Educação Física",
-    description: "CREF Credenciado - Conselho Regional de Educação Física",
+    credential: "CREF 006393-G/SE",
+    description: "CREF credenciado · Conselho Regional de Educação Física",
   },
   {
     id: "performance",

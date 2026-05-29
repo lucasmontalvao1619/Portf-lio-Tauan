@@ -35,6 +35,14 @@ export function QualificationsSection() {
                   <Icon className="h-8 w-8" aria-hidden />
                 </div>
                 <h3 className="mb-4 text-2xl text-white">{cert.title}</h3>
+                {cert.credential ? (
+                  <div className="mb-4 space-y-2">
+                    <p className="font-mono text-lg font-semibold tracking-wide text-gold">
+                      {cert.credential}
+                    </p>
+                    <div className="mx-auto h-px w-12 bg-gold/40" />
+                  </div>
+                ) : null}
                 <p className="leading-relaxed text-gray-400">{cert.description}</p>
               </motion.li>
             );
