@@ -11,7 +11,7 @@ export const SITE = {
   },
   developer: {
     name: "Lucas Oliveira",
-    url: "https://instagram.com/lucasoliveira",
+    url: "https://www.instagram.com/luk.devv/",
   },
   copyrightYear: 2026,
 } as const;
