@@ -7,7 +7,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function ContactSection() {
   return (
-    <section className="bg-surface px-4 py-24">
+    <section id="contato" className="scroll-mt-20 bg-surface px-4 py-24">
       <FadeIn className="mx-auto max-w-4xl text-center">
         <header className="mb-12">
           <SectionHeading className="mb-4 text-5xl">
