@@ -1,0 +1,93 @@
+/* Embla — loop infinito sem vãos nas bordas */
+
+.embla {
+  --slide-height: 300px;
+  --slide-spacing: 0.75rem;
+  --slide-size: 82%;
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (min-width: 640px) {
+  .embla {
+    --slide-height: 400px;
+    --slide-spacing: 1rem;
+    --slide-size: 54%;
+  }
+}
+
+@media (min-width: 768px) {
+  .embla {
+    --slide-height: 500px;
+    --slide-size: 42%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .embla {
+    --slide-height: 560px;
+    --slide-size: 32%;
+  }
+}
+
+.embla__viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.embla__container {
+  display: flex;
+  touch-action: pan-y pinch-zoom;
+  margin-left: calc(var(--slide-spacing) * -1);
+  backface-visibility: hidden;
+}
+
+.embla__container:active {
+  cursor: grabbing;
+}
+
+.embla__slide {
+  flex: 0 0 var(--slide-size);
+  min-width: 0;
+  padding-left: var(--slide-spacing);
+  transform: translateZ(0);
+}
+
+.embla__slide__card {
+  position: relative;
+  height: var(--slide-height);
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  transition:
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.embla__slide__card:hover {
+  border-color: rgba(212, 175, 55, 0.6);
+  box-shadow: 0 5px 20px rgba(212, 175, 55, 0.2);
+}
+
+.embla__slide__card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+.embla__slide__overlay {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.55) 0%,
+    transparent 45%,
+    rgba(0, 0, 0, 0.15) 100%
+  );
+}
